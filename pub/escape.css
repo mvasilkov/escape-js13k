@@ -23,4 +23,40 @@
     transform-style: preserve-3d;
 }
 
-#fl { background: #95a5a6; }
+#fl {
+    background: #95a5a6;
+    transform: translateZ(-20px);
+}
+
+.c {
+    height: 40px;
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 40px;
+}
+
+.i, .j, .k, .l {
+    height: 40px;
+    position: absolute;
+    width: 40px;
+}
+
+.i {
+    background: #f1c40f;
+    transform: translateZ(20px);
+}
+
+.j {
+    background: #e74c3c;
+    transform: rotateY(-90deg) translateZ(20px);
+}
+
+.k {
+    background: #2ecc71;
+    transform: rotateX(-90deg) translateZ(20px);
+}
+
+.l {
+    background: #3498db;
+    transform: rotateY(90deg) translateZ(20px);
+}
