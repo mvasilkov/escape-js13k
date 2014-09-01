@@ -1,0 +1,26 @@
+#scr {
+    background: #ecf0f1;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    perspective: 500px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#psp, #fl {
+    height: 400px;
+    position: absolute;
+    width: 400px;
+}
+
+#psp {
+    left: 50%;
+    margin: -250px 0 0 -200px;
+    top: 50%;
+    transform: rotateX(45deg) rotateZ(-25deg);
+    transform-style: preserve-3d;
+}
+
+#fl { background: #95a5a6; }
