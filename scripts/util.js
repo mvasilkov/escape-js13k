@@ -1,11 +1,11 @@
 function $id(id) { return document.getElementById(id) }
 
 var style = document.createElement('style'),
-    css = '', i
+    css = '#fl{background:url("' + floor + '")}', i
 
-for (i = 0; i < 10; ++i) {
+for (i = 0; i < 9; ++i) {
     css += '[data-x="%"]{left:#px}[data-y="%"]{top:#px}'
-    .replace(/%/g, i).replace(/#/g, 40 * i)
+    .replace(/%/g, i).replace(/#/g, btouv(i))
 }
 
 style.appendChild(document.createTextNode(css))
