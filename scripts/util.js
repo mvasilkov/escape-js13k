@@ -11,9 +11,13 @@ for (i = 0; i < 9; ++i) {
 style.appendChild(document.createTextNode(css))
 document.head.appendChild(style)
 
+var $scr = $id('scr')
+var $psp = $id('psp')
+
 function rot() {
+    $scr.className = '' // XXX
     console.log('rot(' + this.value + ')')
-    $id('psp').style.transform = 'rotateX(45deg) rotateZ(' + this.value + 'deg)'
+    $psp.style.transform = 'rotateX(45deg) rotateZ(' + this.value + 'deg)'
 }
 
 $id('rot').addEventListener('input', rot, false)
