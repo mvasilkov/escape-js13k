@@ -7,6 +7,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    transition: perspective 1s cubic-bezier(0,1,0.2,1);
 }
 
 #psp, #fl {
@@ -21,11 +22,14 @@
     top: 50%;
     transform: rotateX(45deg) rotateZ(-25deg);
     transform-style: preserve-3d;
+    transition: transform 1s;
 }
 
-/* XXX */
-#scr.nopsp { perspective: 0; }
-.nopsp #psp { transform: none; }
+.nopsp {
+    perspective: 9000px !important;
+    transition: perspective 1s cubic-bezier(1,0,1,0.2) !important;
+}
+.nopsp #psp { transform: none !important; }
 
 .c, .i, .j, .k, .l {
     height: 44px;
@@ -39,4 +43,14 @@
 .k { transform: translateZ(22px) rotateX(-90deg) translateZ(22px); }
 .l { transform: translateZ(22px) rotateY( 90deg) translateZ(22px); }
 
-.pl > * { background: #9c0; }
+.pl .i { background: #9c0; }
+.pl .k { background: #8cbf00; }
+.pl .j, .pl .l { background: #80b300; }
+
+.enr .i { background: #f44; }
+.enr .k { background: #f23333; }
+.enr .j, .enr .l { background: #e52222; }
+
+.enb .i { background: #3bf; }
+.enb .k { background: #26b3f2; }
+.enb .j, .enb .l { background: #1aaae5; }

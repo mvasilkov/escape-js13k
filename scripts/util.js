@@ -11,13 +11,13 @@ for (i = 0; i < 9; ++i) {
 style.appendChild(document.createTextNode(css))
 document.head.appendChild(style)
 
-var $scr = $id('scr')
-var $psp = $id('psp')
-
 function rot() {
-    $scr.className = '' // XXX
     console.log('rot(' + this.value + ')')
-    $psp.style.transform = 'rotateX(45deg) rotateZ(' + this.value + 'deg)'
+    $id('psp').style.transform = 'rotateX(45deg) rotateZ(' + this.value + 'deg)'
 }
-
 $id('rot').addEventListener('input', rot, false)
+
+function nopsp() {
+    $id('scr').className = event.target.checked ? 'nopsp' : ''
+}
+$id('nopsp').addEventListener('change', nopsp, false)
