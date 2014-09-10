@@ -1,4 +1,6 @@
 function $id(id) { return document.getElementById(id) }
+function max(a, b) { return b > a? b: a }
+function min(a, b) { return b < a? b: a }
 
 var style = document.createElement('style'),
     css = '#fl{background:url("' + floor + '")}', i
@@ -17,7 +19,7 @@ function rot() {
 }
 $id('rot').addEventListener('input', rot, false)
 
-function nopsp() {
+function nopsp(event) {
     $id('scr').className = event.target.checked ? 'nopsp' : ''
 }
 $id('nopsp').addEventListener('change', nopsp, false)

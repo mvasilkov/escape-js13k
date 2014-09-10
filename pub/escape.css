@@ -43,6 +43,8 @@
 .k { transform: translateZ(22px) rotateX(-90deg) translateZ(22px); }
 .l { transform: translateZ(22px) rotateY( 90deg) translateZ(22px); }
 
+.pl { transition: left 200ms, top 200ms; }
+
 .pl .i { background: #9c0; }
 .pl .k { background: #8cbf00; }
 .pl .j, .pl .l { background: #80b300; }
