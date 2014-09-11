@@ -1,3 +1,11 @@
+body {
+    color: #89867e;
+    font: 100 44px/48px Segoe UI, Helvetica Neue, sans-serif;
+    margin: 0;
+    min-height: 700px;
+    min-width: 700px;
+}
+
 #scr {
     background: #fffffa;
     bottom: 0;
@@ -56,3 +64,19 @@
 .enb .i { background: #3bf; }
 .enb .k { background: #26b3f2; }
 .enb .j, .enb .l { background: #1aaae5; }
+
+/* txt */
+
+#xdp {
+    bottom: 25px;
+    left: 25px;
+    position: absolute;
+}
+
+#dp { color: #f44; }
+
+#msg {
+    bottom: 25px;
+    position: absolute;
+    right: 25px;
+}
