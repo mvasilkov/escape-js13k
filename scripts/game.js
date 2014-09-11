@@ -15,6 +15,8 @@ var msgs = [
 ]
 var $msg = $id('msg').firstChild
 
+var $caught = $id('fu')
+
 var enemy1setup = [
     {},
     {},
@@ -29,7 +31,7 @@ var enemy1setup = [
 ]
 var enemy1 = null
 
-function levelComplete() {
+function nextLevel(lvl) {
     if (enemy1) {
         enemy1.remove()
         enemy1 = null
@@ -39,9 +41,25 @@ function levelComplete() {
     escapist.x = 0
     // escapist.y = 4
     escapist.$update()
-    $depth.nodeValue = --depth
+
+    if (typeof lvl == 'undefined')
+        --depth
+    else depth = lvl
+
+    $depth.nodeValue = depth
     $msg.nodeValue = msgs[depth]
 
     if (enemy1setup[depth].head)
         enemy1 = new Enemy1(enemy1setup[depth])
 }
+
+function testCaught() {
+    if (enemy1 && enemy1.x == escapist.x && enemy1.y == escapist.y) {
+        nextLevel(9)
+        pspOff()
+        $caught.className = 's'
+    }
+}
+
+function throwBack() { $caught.className = '' }
+$caught.addEventListener('transitionend', throwBack, false)

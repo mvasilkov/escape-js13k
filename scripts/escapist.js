@@ -67,13 +67,14 @@ function controls(event) {
     }
 
     escapist.$update()
+    testCaught()
     event.preventDefault()
 }
 
 function moved(event) {
     if (escapist.levelComplete)
-        levelComplete()
+        nextLevel()
 }
 
 window.addEventListener('keydown', controls, true)
-window.addEventListener('transitionend', moved, true)
+escapist.$.addEventListener('transitionend', moved, false)
