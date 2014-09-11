@@ -1,5 +1,5 @@
 #scr {
-    background: #ecf0f1;
+    background: #fffffa;
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -26,7 +26,7 @@
 }
 
 .nopsp {
-    perspective: 9000px !important;
+    perspective: 9999px !important;
     transition: perspective 1s cubic-bezier(1,0,1,0.2) !important;
 }
 .nopsp #psp { transform: none !important; }

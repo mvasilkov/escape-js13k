@@ -8,15 +8,18 @@ function btouv(x) { return 45 * x + 4 }
 
 function paintField(canvas) {
     var i, j
-    canvas.fillStyle = '#95a5a6'
+    canvas.fillStyle = '#89867e'
     canvas.fillRect(0, 0, 412, 412)
+
+    canvas.fillStyle = '#fcf6f0'
     for (i = 0; i < 9; ++i) {
         for (j = 0; j < 9; ++j) {
-            if (i == 8 && j == 4)
+            if (i == 8 && j == 4) {
                 canvas.fillStyle = '#fb3'
-            else
-                canvas.fillStyle = '#ecf0f1'
-            canvas.fillRect(btouv(i), btouv(j), 44, 44)
+                canvas.fillRect(btouv(i), btouv(j), 44, 44)
+                canvas.fillStyle = '#fcf6f0'
+            }
+            else canvas.fillRect(btouv(i), btouv(j), 44, 44)
         }
     }
 
@@ -30,8 +33,12 @@ function paintField(canvas) {
     canvas.lineTo(btouv(3),      btouv(4) + 44)
     canvas.closePath()
 
-    canvas.fillStyle = '#95a5a6'
+    canvas.fillStyle = '#e9e3dd'
+    canvas.lineWidth = 4
+    canvas.strokeStyle = '#89867e'
+
     canvas.fill()
+    canvas.stroke()
 
     return canvas.canvas.toDataURL()
 }

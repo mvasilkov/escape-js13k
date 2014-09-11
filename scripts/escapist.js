@@ -1,6 +1,12 @@
 var escapist = {
     x: 0, y: 4,
-    $: document.getElementsByClassName('pl')[0]
+    levelComplete: false,
+    $: document.getElementsByClassName('pl')[0],
+    $update: function () {
+        this.$.dataset.x = this.x
+        this.$.dataset.y = this.y
+        this.levelComplete = this.x == 8 && this.y == 4
+    }
 }
 
 function controls(event) {
@@ -9,6 +15,11 @@ function controls(event) {
 
     // console.log('event.key = ' + event.key)
     // console.log('event.keyCode = 0x' + event.keyCode.toString(16))
+
+    if (escapist.levelComplete) {
+        event.preventDefault()
+        return
+    }
 
     switch (event.key || event.keyCode) {
         case 'Up':
@@ -55,9 +66,14 @@ function controls(event) {
         return
     }
 
-    escapist.$.dataset.x = escapist.x
-    escapist.$.dataset.y = escapist.y
+    escapist.$update()
     event.preventDefault()
 }
 
+function moved(event) {
+    if (escapist.levelComplete)
+        levelComplete()
+}
+
 window.addEventListener('keydown', controls, true)
+window.addEventListener('transitionend', moved, true)

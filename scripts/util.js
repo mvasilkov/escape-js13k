@@ -1,4 +1,5 @@
 function $id(id) { return document.getElementById(id) }
+function rand0(a) { return a * (Math.random() - 0.5) }
 function max(a, b) { return b > a? b: a }
 function min(a, b) { return b < a? b: a }
 
@@ -13,13 +14,18 @@ for (i = 0; i < 9; ++i) {
 style.appendChild(document.createTextNode(css))
 document.head.appendChild(style)
 
-function rot() {
-    console.log('rot(' + this.value + ')')
-    $id('psp').style.transform = 'rotateX(45deg) rotateZ(' + this.value + 'deg)'
-}
-$id('rot').addEventListener('input', rot, false)
+var $scr = $id('scr')
+var $psp = $id('psp')
 
-function nopsp(event) {
-    $id('scr').className = event.target.checked ? 'nopsp' : ''
+function pspOff() { $scr.className = 'nopsp' }
+
+var rand9_gt0 = 1
+function rand9(a) {
+    return ((rand9_gt0 = !rand9_gt0)? 1: -1) * a * max(Math.random(), 0.1)
 }
-$id('nopsp').addEventListener('change', nopsp, false)
+
+function pspAny() {
+    $scr.className = ''
+    $psp.style.transform = 'rotateX(' + (0|40 + rand0(10)) +
+                           'deg) rotateZ(' + (0|rand9(25)) + 'deg)'
+}
