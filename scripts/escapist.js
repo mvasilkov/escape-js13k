@@ -1,3 +1,8 @@
+function removeHelp() {
+    $id('hlp').className = 'off'
+    removeHelp = function () {}
+}
+
 var escapist = {
     x: 0, y: 4,
     levelComplete: false,
@@ -81,6 +86,8 @@ function controls(event) {
     escapist.$update()
     escapist.levelComplete || testCaught() || enemyTurn()
     event.preventDefault()
+
+    removeHelp()
 }
 
 function moved(event) {

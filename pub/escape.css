@@ -134,3 +134,19 @@ div {
 #gg small { font-size: 25px; }
 
 .win + #gg { opacity: 0.96; }
+
+#hlp {
+    background: #89867e;
+    color: #fffffa;
+    font-size: 25px;
+    height: 50px;
+    left: 0;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: top 1s;
+}
+
+#hlp.off { top: -100px; }

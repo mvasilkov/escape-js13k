@@ -147,4 +147,5 @@ $caught.addEventListener('transitionend', throwBack, false)
 
 function restartGame() {
     nextLevel(depth = 9)
+    pspOff()
 }
