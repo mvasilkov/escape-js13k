@@ -1,4 +1,4 @@
-function removeHelp() {
+var removeHelp = function () {
     $id('hlp').className = 'off'
     removeHelp = function () {}
 }

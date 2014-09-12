@@ -13,6 +13,7 @@ function insertBlock(cn, x, y) {
     return $id(id)
 }
 
+/** @constructor */
 function Enemy(cname, options) {
     this.cn = cname
     this.x = options.head[0]
