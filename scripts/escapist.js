@@ -87,6 +87,7 @@ function controls(event) {
     escapist.levelComplete || testCaught() || enemyTurn()
     event.preventDefault()
 
+    aa.play('go')
     removeHelp()
 }
 

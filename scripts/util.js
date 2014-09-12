@@ -31,3 +31,12 @@ function pspAny() {
     $psp.style.transform = 'rotateX(' + (0|40 + rand0(10)) +
                            'deg) rotateZ(' + (0|rand9(25)) + 'deg)'
 }
+
+var opt = {'snd': 1}
+
+function bind_opt(name) {
+    $id(name).addEventListener('change',
+        function (event) { opt[name] = event.target.checked },
+        false)
+}
+bind_opt('snd')

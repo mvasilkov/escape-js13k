@@ -71,13 +71,18 @@ function nextLevel(lvl) {
     $depth.nodeValue = depth
     $msg.nodeValue = msgs[depth]
 
-    if (!depth)
+    if (!depth) {
         $scr.className = 'win'
+        aa.play('win')
+        lvl = 'x' // disable sound fx (see below)
+    }
 
     if (enemy1setup[depth].head)
         enemy1 = new Enemy('enr', enemy1setup[depth])
     if (enemy2setup[depth].head)
         enemy2 = new Enemy('enb', enemy2setup[depth])
+
+    lvl || aa.play('lvl')
 }
 
 function enemyTurn() {
@@ -137,6 +142,7 @@ function testCaught() {
         nextLevel(++depth)
         if (depth == 9) pspOff()
         $caught.className = 's'
+        aa.play('bad')
         return true
     }
     return false

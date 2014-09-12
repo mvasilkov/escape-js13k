@@ -49,7 +49,7 @@ var _grass = (
 
 function paintFieldG(canvas) {
     var i, j, u, v, x, y
-    canvas.fillStyle = '#fffffa'
+    canvas.fillStyle = '#fcf6f0'
     canvas.fillRect(0, 0, 412, 412)
 
     for (i = 0; i < 9; ++i) {

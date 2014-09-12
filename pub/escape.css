@@ -6,7 +6,7 @@ body {
     min-width: 700px;
 }
 
-div {
+div, nav {
     cursor: default;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -126,6 +126,7 @@ div {
 }
 
 #gg {
+    background: #ff0080;
     height: 105px;
     line-height: 40px;
     padding-top: 20px;
@@ -137,6 +138,7 @@ div {
 
 #hlp {
     background: #89867e;
+    border-bottom: 5px solid #fffffa;
     color: #fffffa;
     font-size: 25px;
     height: 50px;
@@ -150,3 +152,14 @@ div {
 }
 
 #hlp.off { top: -100px; }
+
+nav {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+nav b { font-weight: 600; }
