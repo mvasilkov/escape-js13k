@@ -1,23 +1,15 @@
 function makeBGM() {
     var s = '', t
-    function _bgm(s, o, r, p) {
-        var c = s.charCodeAt((t >> r) % p)
-        return c==32?0:31&t*Math.pow(2,c/12-o)
-    }
-
-    for (t = 0; t < 65536; ++t) {
+    for (t = 0; t < 8<<16; ++t) {
         s += String.fromCharCode(
-            _bgm("0 0     7 7     037:<<",6,10,32) +
-            (t&4096?_bgm("037",4,8,3)*(4096-(t&4095))>>12:0))
+            ((t*('36364689'[t>>13&7]&15))/12&128)+(((((t>>12)^(t>>12)-2)%11*t)/4|t>>13)&127))
     }
-    return 'RIFF_oO_WAVEfmt ' + atob('EAAAAAEAAQBAHwAAQB8AAAEACAA') + 'data' +
-           s + s + s + s + s + s + s + s + s + s + s + s + s + s + s + s
+    return 'RIFF_oO_WAVEfmt' + atob('IBAAAAABAAEARKwAAAAAAAABAAgAZGF0YU') + s + s
 }
 
 var bgm = new Audio('data:audio/wav;base64,' + btoa(makeBGM()))
 bgm.loop = true
-bgm.volume = 0.9
-// bgm.play()
+bgm.volume = 0.33
 
 $id('mus').addEventListener('change',
     function (event) {
