@@ -11,6 +11,8 @@ for (i = 0; i < 9; ++i) {
     .replace(/%/g, i).replace(/#/g, btouv(i))
 }
 
+css += '.win #fl{background:url("' + grass + '")}'
+
 style.appendChild(document.createTextNode(css))
 document.head.appendChild(style)
 

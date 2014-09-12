@@ -54,6 +54,11 @@ function nextLevel(lvl) {
         enemy2 = null
     }
 
+    if (!depth) {
+        escapist.levelComplete = false
+        return
+    }
+
     pspAny()
     escapist.x = 0
     escapist.y = 4
@@ -65,6 +70,9 @@ function nextLevel(lvl) {
 
     $depth.nodeValue = depth
     $msg.nodeValue = msgs[depth]
+
+    if (!depth)
+        $scr.className = 'win'
 
     if (enemy1setup[depth].head)
         enemy1 = new Enemy('enr', enemy1setup[depth])
@@ -136,3 +144,7 @@ function testCaught() {
 
 function throwBack() { $caught.className = '' }
 $caught.addEventListener('transitionend', throwBack, false)
+
+function restartGame() {
+    nextLevel(depth = 9)
+}

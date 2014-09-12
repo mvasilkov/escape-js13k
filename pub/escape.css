@@ -108,7 +108,7 @@ div {
     right: 25px;
 }
 
-#fu {
+#fu, #gg {
     background: #89867e;
     bottom: 0;
     color: #fffffa;
@@ -124,3 +124,13 @@ div {
     top: 0;
     transition: opacity 0.9s;
 }
+
+#gg {
+    height: 105px;
+    line-height: 40px;
+    padding-top: 20px;
+}
+
+#gg small { font-size: 25px; }
+
+.win + #gg { opacity: 0.96; }

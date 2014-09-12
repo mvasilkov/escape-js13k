@@ -62,6 +62,18 @@ function controls(event) {
         escapist.x = min(8, escapist.x + 1)
         break
 
+        case '9':
+        case 0x39:
+        restartGame()
+        break
+
+        // cheat: goto exit
+        case ']':
+        case 0xdd:
+        escapist.x = 8
+        escapist.y = 4
+        break
+
         default:
         return
     }
