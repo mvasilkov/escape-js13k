@@ -67,7 +67,7 @@ function controls(event) {
     }
 
     escapist.$update()
-    testCaught()
+    escapist.levelComplete || testCaught() || enemyTurn()
     event.preventDefault()
 }
 

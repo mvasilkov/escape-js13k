@@ -19,3 +19,8 @@ Enemy1.prototype.reveal = function () {
 Enemy1.prototype.remove = function () {
     $psp.removeChild(this.$)
 }
+
+Enemy1.prototype.$update = function () {
+    this.$.dataset.x = this.x
+    this.$.dataset.y = this.y
+}
