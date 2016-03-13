@@ -33,10 +33,3 @@ function pspAny() {
 }
 
 var opt = {'snd': 1}
-
-function bind_opt(name) {
-    $id(name).addEventListener('change',
-        function (event) { opt[name] = event.target.checked },
-        false)
-}
-bind_opt('snd')
