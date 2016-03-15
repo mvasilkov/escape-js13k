@@ -56,6 +56,7 @@ $('.button-music')
     else {
         $controller.removeClass('music-on').addClass('music-off')
     }
+    air_console.message(AirConsole.SCREEN, '^music:' + (music ? 'on' : 'off'))
 })
 
 $('.button-sound')
@@ -66,4 +67,22 @@ $('.button-sound')
     else {
         $controller.removeClass('sound-on').addClass('sound-off')
     }
+    air_console.message(AirConsole.SCREEN, '^sound:' + (sound ? 'on' : 'off'))
 })
+
+$('.button-restart')
+.on('touchstart', function (event) {
+    air_console.message(AirConsole.SCREEN, '9')
+})
+
+air_console.onMessage = function (a, b) {
+    switch (b) {
+        case '^restart:on':
+            $controller.removeClass('no-restart')
+            break
+
+        case '^restart:off':
+            $controller.addClass('no-restart')
+            break
+    }
+}

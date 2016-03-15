@@ -102,5 +102,29 @@ escapist.$.addEventListener('transitionend', moved, false)
 function nop(){}
 
 air_console.onMessage = function (a, b) {
+    if (typeof b != 'string')
+        return
+
+    if (b[0] == '^') {
+        switch (b) {
+            case '^music:on':
+                bgm_enable()
+                break
+
+            case '^music:off':
+                bgm_disable()
+                break
+
+            case '^sound:on':
+                opt.snd = 1
+                break
+
+            case '^sound:off':
+                opt.snd = 0
+                break
+        }
+        return
+    }
+
     controls({key: b, preventDefault: nop})
 }

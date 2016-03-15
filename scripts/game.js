@@ -75,6 +75,8 @@ function nextLevel(lvl) {
         $scr.className = 'win'
         aa.play('win')
         lvl = 'x' // disable sound fx (see below)
+
+        air_console.message(void 0, '^restart:on')
     }
 
     if (enemy1setup[depth].head)
@@ -152,6 +154,8 @@ function throwBack() { $caught.className = '' }
 $caught.addEventListener('transitionend', throwBack, false)
 
 function restartGame() {
+    air_console.message(void 0, '^restart:off')
+
     nextLevel(depth = 9)
     pspOff()
 }
