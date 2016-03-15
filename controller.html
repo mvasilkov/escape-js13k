@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <title>Escape the pit :: controller</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="./pub/controller.css">
+    </head>
+    <body>
+        <div id="controller" class="controller music-on sound-on no-restart">
+            <div class="panel">
+                <div class="dpad-container">
+                    <div class="dpad-backdrop"></div>
+                    <div class="dpad dpad-up" id="W">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-up2"></div>
+                    </div>
+                    <div class="dpad dpad-right" id="D">
+                        <div class="arrow-right2"></div>
+                        <div class="arrow-right"></div>
+                    </div>
+                    <div class="dpad dpad-down" id="S">
+                        <div class="arrow-down2"></div>
+                        <div class="arrow-down"></div>
+                    </div>
+                    <div class="dpad dpad-left" id="A">
+                        <div class="arrow-left"></div>
+                        <div class="arrow-left2"></div>
+                    </div>
+                    <div class="dpad dpad-center"></div>
+                </div>
+                <div class="buttons-container">
+                    <div class="button-backdrop">
+                        <div class="button button-music"><svg class="icon icon-music-on" viewBox="0 0 24 24"><path class="path1" d="M14.016 3.234c4.031 0.891 6.984 4.5 6.984 8.766s-2.953 7.875-6.984 8.766v-2.063c2.906-0.844 4.969-3.516 4.969-6.703s-2.063-5.859-4.969-6.703v-2.063zM16.5 12c0 1.781-0.984 3.281-2.484 4.031v-8.063c1.5 0.75 2.484 2.25 2.484 4.031zM3 9h3.984l5.016-5.016v16.031l-5.016-5.016h-3.984v-6z"></path></svg><svg class="icon icon-music-off" viewBox="0 0 24 24"><path class="path1" d="M12 3.984v4.219l-2.109-2.109zM4.266 3l16.734 16.734-1.266 1.266-2.063-2.063c-1.078 0.844-2.297 1.5-3.656 1.828v-2.063c0.844-0.234 1.594-0.656 2.25-1.172l-4.266-4.266v6.75l-5.016-5.016h-3.984v-6h4.734l-4.734-4.734zM18.984 12c0-3.188-2.063-5.859-4.969-6.703v-2.063c4.031 0.891 6.984 4.5 6.984 8.766 0 1.5-0.375 2.953-1.031 4.172l-1.5-1.547c0.328-0.797 0.516-1.688 0.516-2.625zM16.5 12c0 0.234 0 0.422-0.047 0.609l-2.438-2.438v-2.203c1.5 0.75 2.484 2.25 2.484 4.031z"></path></svg></div>
+                    </div>
+                    <div class="button-backdrop">
+                        <div class="button button-sound"><svg class="icon icon-sound-on" viewBox="0 0 24 24"><path class="path1" d="M12 21.984c-1.125 0-2.016-0.891-2.016-1.969h3.984c0 1.164-0.872 1.969-1.969 1.969zM18 11.016v4.969l2.016 2.016v0.984h-16.031v-0.984l2.016-2.016v-4.969c0-3.094 1.641-5.625 4.5-6.328v-0.703c0-0.844 0.656-1.5 1.5-1.5s1.5 0.656 1.5 1.5v0.703c2.859 0.703 4.5 3.281 4.5 6.328zM19.969 10.5c-0.141-2.672-1.5-4.969-3.516-6.422l1.406-1.406c2.391 1.828 3.984 4.641 4.125 7.828h-2.016zM7.594 4.078c-2.063 1.453-3.422 3.75-3.563 6.422h-2.016c0.141-3.188 1.734-6 4.125-7.828z"></path></svg><svg class="icon icon-sound-off" viewBox="0 0 24 24"><path class="path1" d="M18 14.672l-8.953-9.422c0.234-0.094 0.469-0.234 0.703-0.328h0.047l0.281-0.141c0.141-0.047 0.281-0.047 0.422-0.094v-0.703c0-0.844 0.656-1.5 1.5-1.5s1.5 0.656 1.5 1.5v0.703c2.859 0.703 4.5 3.234 4.5 6.328v3.656zM12 21.984c-1.125 0-2.016-0.844-2.016-1.969h4.031c0 1.125-0.891 1.969-2.016 1.969zM7.828 6.141c4.388 4.534 8.797 9.047 13.172 13.594l-1.266 1.266-2.016-2.016h-13.734v-0.984l2.016-2.016v-5.016c0-1.266 0.281-2.438 0.797-3.422l-2.813-2.766 1.266-1.313z"></path></svg></div>
+                    </div>
+                    <div class="button-backdrop restart-container">
+                        <div class="button button-restart"><svg class="icon icon-restart" viewBox="0 0 24 24"><path class="path1" d="M16.5 9h5.484v6h-5.484l-3-3zM9 16.5l3-3 3 3v5.484h-6v-5.484zM7.5 9l3 3-3 3h-5.484v-6h5.484zM15 7.5l-3 3-3-3v-5.484h6v5.484z"></path></svg></div>
+                    </div>
+                </div>
+                <div class="label label-music label-music-on">Music is ON</div>
+                <div class="label label-music label-music-off">Music is OFF</div>
+                <div class="label label-sound label-sound-on">Sound is ON</div>
+                <div class="label label-sound label-sound-off">Sound is OFF</div>
+                <div class="label label-restart">New Game</div>
+            </div>
+        </div>
+
+        <script src="https://www.airconsole.com/api/airconsole-1.4.0.js"></script>
+
+        <script src="./pub/jquery-2.2.1.min.js"></script>
+        <script src="./scripts/controller.js"></script>
+    </body>
+</html>

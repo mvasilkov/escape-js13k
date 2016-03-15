@@ -33,3 +33,5 @@ function pspAny() {
 }
 
 var opt = {'snd': 1}
+
+var air_console = new AirConsole

@@ -98,3 +98,9 @@ function moved(event) {
 
 window.addEventListener('keydown', controls, true)
 escapist.$.addEventListener('transitionend', moved, false)
+
+function nop(){}
+
+air_console.onMessage = function (a, b) {
+    controls({key: b, preventDefault: nop})
+}
